@@ -1,0 +1,30 @@
+extends app.pug 
+block titulo
+
+    title Cadastrar novo veículo 
+block conteudo 
+    h1 Cadastrar novo veículo 
+    
+    form(action='/tbl_frota/', method='post')
+        .mb-3 
+            label.form-label(for='id') ID 
+            input#name.form-control(type='text' value='' required name='id' placeholder='Digite o id')
+        .mb-3 
+            label.form-label(for='marca') Marca 
+            input#name.form-control(type='text' value='' required name='marca' placeholder='Digite a marca')
+        .mb-3 
+            label.form-label(for='placa') Placa 
+            input#name.form-control(type="text" value='' required name='placa' placeholder='Digite a placa')
+        .mb-3 
+            label.form-label(for='ano') Ano 
+            input#name.form-control(type='text' value='' required name='ano' placeholder='Digite o ano')
+        .mb-3 
+            label.form-label(for='cor') Cor 
+            input#name.form-control(type='text' value='' required name='cor' placeholder='Digite a cor')
+        .mb-3 
+            label.form-label(for='km') Km 
+            input#name.form-control(type='text' value='' required name='km' placeholder='Digite o km')
+        .mb-3 
+            label.form-label(for='acoes') Ações 
+            input#name.form-control(type='text' value='' required name='acoes' placeholder='Relatório')    
+        button(type='submit' value='submit').btn.btn-success Enviar

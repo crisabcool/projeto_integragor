@@ -1,0 +1,38 @@
+extends app.pug 
+block titulo
+
+    title Frota
+block conteudo 
+    h1 Frota 
+    table.table 
+        thead 
+            tr 
+                th(scope='col') id 
+                th(scope='col') marca
+                th(scope='col') placa
+                th(scope='col') ano
+                th(scope='col') cor
+                th(scope='col') km
+                th(scope='col') ações 
+        tbody 
+            for frota, indice in tbl_frota 
+                tr 
+                    th(scope='row') #{frota.id}
+                    td 
+                        a(href=`/tbl_frota/${frota.id}`) #{frota.marca}
+                    td 
+                        a(href=`/tbl_frota/${frota.id}`) #{frota.placa}
+                    td 
+                        a(href=`/tbl_frota/${frota.id}`) #{frota.ano}
+                    td 
+                        a(href=`/tbl_frota/${frota.id}`) #{frota.cor}
+                    td 
+                        a(href=`/tbl_frota/${frota.id}`) #{frota.km}
+                    td 
+                        a(href=`/tbl_frota/${frota.id}`) #{frota.acoes}
+                    td 
+                        a(href=`/tbl_frota/${frota.id}/edit`).btn.btn-primary Editar
+                        form(action=`/tbl_frota/${frota.id}?_method=DELETE` method='POST' style='display: inline')
+                            button(type='submit' onclick='return confirm("Tem certeza que deseja apagar?")').btn.btn-danger Excluir
+    a(href="/tbl_frota/create").btn.btn-success Novo Veículo
+    

@@ -1,0 +1,32 @@
+extends app.pug 
+block titulo
+
+    title Frota #{frota.marca} 
+block conteudo 
+    .card 
+        h5.card-header Veículos #{frota.marca}
+        .card-body
+            p
+                strong ID: 
+                    frota #{frota.id}
+            p 
+                strong Marca: 
+                    frota #{frota.marca}
+            p 
+                strong Placa: 
+                    frota #{frota.placa}
+            p 
+                strong Ano: 
+                    frota #{frota.ano}
+            p 
+                strong Cor: 
+                    frota #{frota.cor}
+            p 
+                strong Km : 
+                    frota #{frota.km}
+            p 
+                strong Ações : 
+                    frota #{frota.acoes}
+                    
+
+            a(href="/tbl_frota/").btn.btn-success Voltar para a Lista   
